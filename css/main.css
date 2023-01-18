@@ -1,5 +1,13 @@
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
 .main-visual {
   overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
 }
 .main-visual ul li {
   height: 100vh;

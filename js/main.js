@@ -3,6 +3,15 @@ Splitting();
 //transfotm:translateX()
 
 const btnAuto = document.querySelector(".btn--auto");
+const gnb = document.querySelector(".gnb");
+const header = document.querySelector(".header");
+gnb.addEventListener("mouseenter", function () {
+  header.classList.add("on");
+});
+gnb.addEventListener("mouseleave", function () {
+  header.classList.remove("on");
+});
+
 btnAuto.addEventListener("click", function () {
   if (mainVisualSwiper.autoplay.paused) {
     mainVisualSwiper.autoplay.run();
@@ -19,10 +28,11 @@ const mainVisualSwiper = new Swiper(".main-visual", {
   speed: 1000,
   autoplay: {
     delay: 2000,
+    disableOnInteraction: false,
   },
   pagination: {
     el: ".main-visual .pagination .pagination-box",
     type: "bullets",
+    clickable: true,
   },
 });
-console.log(mainVisualSwiper.autoplay.paused);
