@@ -97,11 +97,10 @@
       align-items: center;
       cursor: pointer;
       &.off:before {
-        content: "\e037";
+        @include icon("\e037");
       }
       &:before {
-        content: "\e034";
-        font-family: "Material Icons";
+        @include icon("\e034");
         color: #fff;
         font-size: 20px;
       }
@@ -136,6 +135,7 @@
   }
   &-list {
     display: flex;
+    margin-top: 100px;
     li {
       width: 20%;
       //aspect-ratio: 1/1.5;
@@ -170,6 +170,7 @@
         background-color: rgb(231, 98, 9);
         opacity: 0;
         transition: all 0.25s ease;
+        pointer-events: none;
       }
       &:before {
         content: "";
@@ -186,6 +187,7 @@
         //border: 1px solid #fff;
         opacity: 0;
         transition: all 0.25s ease;
+        pointer-events: none;
       }
       &:nth-child(1):before {
         width: 123px;
@@ -227,6 +229,84 @@
       &:nth-child(5) {        background-position: (-240px * 2) 0;      }
       */
       //보간 interpolation
+    }
+  }
+}
+.board {
+  background-color: #58595b;
+  position: relative;
+  &-item {
+    position: relative;
+  }
+  &:before {
+    content: "";
+    display: block;
+    background-color: $red;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .container {
+    display: flex;
+    .board-item {
+      width: 50%;
+      color: #fff;
+      h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
+      }
+      ul {
+        li {
+          padding: 20px 0;
+          border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+          a {
+            display: block;
+            @include ellipsis;
+            position: relative;
+            //@include multiEllipsis(3, 1.5);
+            padding-right: 50px;
+            &:after {
+              display: block;
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              @include icon("\e5c8");
+            }
+          }
+        }
+      }
+      &:nth-child(1) {
+        padding-right: 100px;
+      }
+      &:nth-child(2) {
+        padding-left: 100px;
+      }
+    }
+  }
+}
+.util {
+  background-color: #f8f8f8;
+  .container {
+    display: flex;
+    .util-item {
+      width: 50%;
+      background-color: #fff;
+      padding: 50px;
+      h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
+      }
+      background-repeat: no-repeat;
+      background-position: right 50px top 50%;
+      &:nth-child(1) {
+        background-image: url("../images/main/bg_faq.png");
+      }
+      &:nth-child(2) {
+        background-image: url("../images/main/bg_custom.png");
+      }
     }
   }
 }

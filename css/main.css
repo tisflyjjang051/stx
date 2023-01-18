@@ -99,11 +99,12 @@
   cursor: pointer;
 }
 .main-visual .pagination .btn.off:before {
+  font-family: "Material Icons";
   content: "\e037";
 }
 .main-visual .pagination .btn:before {
-  content: "\e034";
   font-family: "Material Icons";
+  content: "\e034";
   color: #fff;
   font-size: 20px;
 }
@@ -134,6 +135,7 @@
 }
 .business-list {
   display: flex;
+  margin-top: 100px;
 }
 .business-list li {
   width: 20%;
@@ -186,6 +188,7 @@
   background-color: rgb(231, 98, 9);
   opacity: 0;
   transition: all 0.25s ease;
+  pointer-events: none;
 }
 .business-list li:before {
   content: "";
@@ -201,6 +204,7 @@
   transform: translateX(-50%);
   opacity: 0;
   transition: all 0.25s ease;
+  pointer-events: none;
 }
 .business-list li:nth-child(1):before {
   width: 123px;
@@ -232,4 +236,84 @@
 }
 .business-list li:hover:before {
   opacity: 1;
+}
+
+.board {
+  background-color: #58595b;
+  position: relative;
+}
+.board-item {
+  position: relative;
+}
+.board:before {
+  content: "";
+  display: block;
+  background-color: rgb(214, 9, 9);
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.board .container {
+  display: flex;
+}
+.board .container .board-item {
+  width: 50%;
+  color: #fff;
+}
+.board .container .board-item h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+.board .container .board-item ul li {
+  padding: 20px 0;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+}
+.board .container .board-item ul li a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  padding-right: 50px;
+}
+.board .container .board-item ul li a:after {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Material Icons";
+  content: "\e5c8";
+}
+.board .container .board-item:nth-child(1) {
+  padding-right: 100px;
+}
+.board .container .board-item:nth-child(2) {
+  padding-left: 100px;
+}
+
+.util {
+  background-color: #f8f8f8;
+}
+.util .container {
+  display: flex;
+}
+.util .container .util-item {
+  width: 50%;
+  background-color: #fff;
+  padding: 50px;
+  background-repeat: no-repeat;
+  background-position: right 50px top 50%;
+}
+.util .container .util-item h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+.util .container .util-item:nth-child(1) {
+  background-image: url("../images/main/bg_faq.png");
+}
+.util .container .util-item:nth-child(2) {
+  background-image: url("../images/main/bg_custom.png");
 }
