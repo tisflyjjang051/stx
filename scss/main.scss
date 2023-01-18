@@ -1,6 +1,7 @@
 @import "vars";
 @import "mixins";
 .main-visual {
+  overflow: hidden;
   ul {
     li {
       height: 100vh;
@@ -43,6 +44,50 @@
     }
     &--sub {
       font-size: 24px;
+    }
+  }
+  .pagination {
+    position: absolute;
+    bottom: 50px;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &-box {
+      width: auto;
+    }
+    .swiper-pagination-bullet {
+      opacity: 1;
+      width: 30px;
+      height: 30px;
+      background: none;
+      border: 3px solid #fff;
+      border-radius: 100px;
+      transition: all 0.25s ease;
+      &-active {
+        background-color: #fff;
+        width: 120px;
+      }
+    }
+    .btn {
+      width: 30px;
+      height: 30px;
+      border: 3px solid #fff;
+      border-radius: 100px;
+      //background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &.off:before {
+        content: "\e037";
+      }
+      &:before {
+        content: "\e034";
+        font-family: "Material Icons";
+        color: #fff;
+        font-size: 20px;
+      }
     }
   }
 }

@@ -1,3 +1,6 @@
+.main-visual {
+  overflow: hidden;
+}
 .main-visual ul li {
   height: 100vh;
   background-size: cover;
@@ -39,4 +42,47 @@
 }
 .main-visual__txt--sub {
   font-size: 24px;
+}
+.main-visual .pagination {
+  position: absolute;
+  bottom: 50px;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main-visual .pagination-box {
+  width: auto;
+}
+.main-visual .pagination .swiper-pagination-bullet {
+  opacity: 1;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  transition: all 0.25s ease;
+}
+.main-visual .pagination .swiper-pagination-bullet-active {
+  background-color: #fff;
+  width: 120px;
+}
+.main-visual .pagination .btn {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.main-visual .pagination .btn.off:before {
+  content: "\e037";
+}
+.main-visual .pagination .btn:before {
+  content: "\e034";
+  font-family: "Material Icons";
+  color: #fff;
+  font-size: 20px;
 }
