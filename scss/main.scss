@@ -28,6 +28,7 @@
       }
     }
   }
+  /*
   &--visual01 {
     background-image: url("../images/main/visual01.jpg");
   }
@@ -37,6 +38,13 @@
   &--visual03 {
     background-image: url("../images/main/visual03.jpg");
   }
+  */
+  @for $i from 1 through 3 {
+    &--visual0#{$i} {
+      background-image: url("../images/main/visual0#{$i}.jpg");
+    }
+  }
+
   &__txt {
     position: absolute;
     top: 50%;
@@ -130,23 +138,95 @@
     display: flex;
     li {
       width: 20%;
-      height: 420px;
       //aspect-ratio: 1/1.5;
       text-align: center;
+      position: relative;
       background-image: url("../images/main/img_business.png");
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          background-position: (-240px * ($i - 1)) 0;
+        }
+      }
+      a {
+        display: block;
+        height: 420px;
+      }
       h3 {
         font-size: 24px;
         font-weight: 700;
+        padding-top: 100px;
+        color: #fff;
+        position: relative;
+        z-index: 2;
       }
-      &:nth-child(1) {
-        background-position: 0 0;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(231, 98, 9);
+        opacity: 0;
+        transition: all 0.25s ease;
       }
-      &:nth-child(2) {
-        background-position: -240px 0;
+      &:before {
+        content: "";
+        display: block;
+        background-image: url("../images/main/bg_common.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 1;
+        width: 200px;
+        height: 200px;
+        left: 50%;
+        top: 150px;
+        transform: translateX(-50%);
+        //border: 1px solid #fff;
+        opacity: 0;
+        transition: all 0.25s ease;
       }
-      &:nth-child(3) {
-        background-position: (-240px * 2) 0;
+      &:nth-child(1):before {
+        width: 123px;
+        height: 112px;
+        background-position: -168px 0px;
       }
+      &:nth-child(2):before {
+        width: 123px;
+        height: 112px;
+        background-position: -301px 0px;
+      }
+      &:nth-child(3):before {
+        width: 130px;
+        height: 106px;
+        background-position: 0px -122px;
+      }
+      &:nth-child(4):before {
+        width: 130px;
+        height: 111px;
+        background-position: -140px -122px;
+      }
+      &:nth-child(5):before {
+        width: 103px;
+        height: 103px;
+        background-position: -280px -122px;
+      }
+      &:hover:after {
+        opacity: 1;
+      }
+      &:hover:before {
+        opacity: 1;
+      }
+
+      /*
+      &:nth-child(1) {        background-position: 0 0;      }
+      &:nth-child(2) {        background-position: -240px 0;      }
+      &:nth-child(3) {        background-position: (-240px * 2) 0;      }
+      &:nth-child(4) {        background-position: (-240px * 2) 0;      }
+      &:nth-child(5) {        background-position: (-240px * 2) 0;      }
+      */
+      //보간 interpolation
     }
   }
 }
